@@ -4,5 +4,5 @@
     <keepgenerated>true</keepgenerated>
     <debug>true</debug>
   </jsp-descriptor>
-  <context-root>/ImeiBloqueo-web</context-root>
+  <context-root>/CavGarantias-web</context-root>
 </weblogic-web-app>

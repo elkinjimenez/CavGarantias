@@ -2,11 +2,11 @@
 <application version="7" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd">
   <module>
     <web>
-      <web-uri>/ImeiBloqueo-web-1.0-SNAPSHOT.war</web-uri>
-      <context-root>/ImeiBloqueo-web</context-root>
+      <web-uri>/CavGarantias-web-1.0-SNAPSHOT.war</web-uri>
+      <context-root>/CavGarantias-web</context-root>
     </web>
   </module>
   <module>
-    <ejb>/ImeiBloqueo-ejb-1.0-SNAPSHOT.jar</ejb>
+    <ejb>/CavGarantias-ejb-1.0-SNAPSHOT.jar</ejb>
   </module>
 </application>

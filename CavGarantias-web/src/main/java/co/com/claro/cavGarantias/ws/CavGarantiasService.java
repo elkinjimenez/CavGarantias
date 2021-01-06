@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.imeiBloqueo.ws;
+package co.com.claro.cavGarantias.ws;
 
-import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.*;
 import javax.ws.rs.Path;
@@ -17,15 +16,12 @@ import javax.ejb.TransactionManagement;
  *
  * @author omarMad
  */
-@Path("imeiBloqueo")
+@Path("cavGarantias")
 @Stateless
 @TransactionManagement
-public class imeiBloqueoService {
-
-    @EJB
-    private CodigoscvcOtpFacade codigosCVCFacade;
-
-    public imeiBloqueoService() {
+public class cavGarantiasService {
+    
+    public cavGarantiasService() {
     }
 
     @GET

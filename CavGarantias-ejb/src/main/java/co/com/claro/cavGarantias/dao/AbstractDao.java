@@ -1,4 +1,4 @@
-package co.com.claro.imeiBloqueo.dao;
+package co.com.claro.cavGarantias.dao;
 
 import java.util.Iterator;
 import java.util.List;

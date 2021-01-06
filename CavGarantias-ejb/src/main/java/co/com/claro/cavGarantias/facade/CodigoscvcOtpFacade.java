@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.claro.imeiBloqueo.facade;
+package co.com.claro.cavGarantias.facade;
 
-import co.com.claro.imeiBloqueo.entity.CodigoscvcOtp;
+import co.com.claro.cavGarantias.entity.CodigoscvcOtp;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

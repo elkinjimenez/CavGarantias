@@ -1,4 +1,4 @@
-package co.com.claro.imeiBloqueo.model;
+package co.com.claro.cavGarantias.model;
 
 import lombok.Getter;
 import lombok.Setter;
