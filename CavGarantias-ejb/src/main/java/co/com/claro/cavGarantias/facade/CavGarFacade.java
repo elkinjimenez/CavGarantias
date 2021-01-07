@@ -5,8 +5,7 @@
  */
 package co.com.claro.cavGarantias.facade;
 
-import co.com.claro.cavGarantias.entity.CodigoscvcOtp;
-import java.util.List;
+import co.com.claro.cavGarantias.entity.CavGar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,9 +15,9 @@ import javax.persistence.PersistenceContext;
  * @author jimenezelkg
  */
 @Stateless
-public class CodigoscvcOtpFacade extends AbstractFacade<CodigoscvcOtp> {
+public class CavGarFacade extends AbstractFacade<CavGar> {
 
-    @PersistenceContext(unitName = "UpdateCase")
+    @PersistenceContext(unitName = "co.com.claro.cavGarantias_CavGarantias-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
 
     @Override
@@ -26,13 +25,8 @@ public class CodigoscvcOtpFacade extends AbstractFacade<CodigoscvcOtp> {
         return em;
     }
 
-    public CodigoscvcOtpFacade() {
-        super(CodigoscvcOtp.class);
+    public CavGarFacade() {
+        super(CavGar.class);
     }
-
-    public List<CodigoscvcOtp> searchCode(String code) {
-        List<CodigoscvcOtp> cod = (List<CodigoscvcOtp>) em.createQuery("SELECT c FROM CodigoscvcOtp c WHERE c.custcodeAgente='" + code + "'").getResultList();
-        return cod;
-    }
-
+    
 }

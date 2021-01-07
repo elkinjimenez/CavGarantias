@@ -1,6 +1,5 @@
 package co.com.claro.cavGarantias.model;
 
-import co.com.claro.cavGarantias.entity.CodigoscvcOtp;
 import java.util.List;
 import lombok.*;
 
@@ -13,8 +12,8 @@ public class DataResponse {
     @Setter
     private GenericResponse response;
 
-    @Getter
-    @Setter
-    private List<CodigoscvcOtp> codesCVC;
+//    @Getter
+//    @Setter
+//    private List<CavGar> cavs;
 
 }
