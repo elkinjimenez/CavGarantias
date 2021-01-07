@@ -5,7 +5,7 @@
  */
 package co.com.claro.cavGarantias.facade;
 
-import co.com.claro.cavGarantias.entity.CavGar;
+import co.com.claro.cavGarantias.entity.GarCav;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author jimenezelkg
  */
 @Stateless
-public class CavGarFacade extends AbstractFacade<CavGar> {
+public class GarCavFacade extends AbstractFacade<GarCav> {
 
     @PersistenceContext(unitName = "co.com.claro.cavGarantias_CavGarantias-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
@@ -26,12 +26,12 @@ public class CavGarFacade extends AbstractFacade<CavGar> {
         return em;
     }
 
-    public CavGarFacade() {
-        super(CavGar.class);
+    public GarCavFacade() {
+        super(GarCav.class);
     }
 
-    public List<CavGar> queryCodeCav(String codeCav) {
-        List<CavGar> list = (List<CavGar>) em.createQuery("SELECT c FROM CavGar c WHERE c.codeCav='" + codeCav + "'").getResultList();
+    public List<GarCav> queryCodeCav(String codeCav) {
+        List<GarCav> list = (List<GarCav>) em.createQuery("SELECT g FROM GarCav g WHERE g.codeCav='" + codeCav + "'").getResultList();
         if (!list.isEmpty()) {
             return list;
         } else {

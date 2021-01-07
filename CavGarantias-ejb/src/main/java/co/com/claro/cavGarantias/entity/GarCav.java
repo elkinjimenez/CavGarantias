@@ -23,17 +23,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author jimenezelkg
  */
 @Entity
-@Table(name = "CAV_GAR")
+@Table(name = "GAR_CAV")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "CavGar.findAll", query = "SELECT c FROM CavGar c")
-    , @NamedQuery(name = "CavGar.findById", query = "SELECT c FROM CavGar c WHERE c.id = :id")
-    , @NamedQuery(name = "CavGar.findByCodeCav", query = "SELECT c FROM CavGar c WHERE c.codeCav = :codeCav")
-    , @NamedQuery(name = "CavGar.findByNameCav", query = "SELECT c FROM CavGar c WHERE c.nameCav = :nameCav")
-    , @NamedQuery(name = "CavGar.findByAddress", query = "SELECT c FROM CavGar c WHERE c.address = :address")
-    , @NamedQuery(name = "CavGar.findByCst", query = "SELECT c FROM CavGar c WHERE c.cst = :cst")
-    , @NamedQuery(name = "CavGar.findByModel", query = "SELECT c FROM CavGar c WHERE c.model = :model")})
-public class CavGar implements Serializable {
+    @NamedQuery(name = "GarCav.findAll", query = "SELECT g FROM GarCav g")
+    , @NamedQuery(name = "GarCav.findById", query = "SELECT g FROM GarCav g WHERE g.id = :id")
+    , @NamedQuery(name = "GarCav.findByCodeCav", query = "SELECT g FROM GarCav g WHERE g.codeCav = :codeCav")
+    , @NamedQuery(name = "GarCav.findByNameCav", query = "SELECT g FROM GarCav g WHERE g.nameCav = :nameCav")
+    , @NamedQuery(name = "GarCav.findByAddress", query = "SELECT g FROM GarCav g WHERE g.address = :address")
+    , @NamedQuery(name = "GarCav.findByCst", query = "SELECT g FROM GarCav g WHERE g.cst = :cst")
+    , @NamedQuery(name = "GarCav.findByModel", query = "SELECT g FROM GarCav g WHERE g.model = :model")})
+public class GarCav implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -65,14 +65,14 @@ public class CavGar implements Serializable {
     @Column(name = "MODEL")
     private String model;
 
-    public CavGar() {
+    public GarCav() {
     }
 
-    public CavGar(BigDecimal id) {
+    public GarCav(BigDecimal id) {
         this.id = id;
     }
 
-    public CavGar(BigDecimal id, short codeCav, String nameCav, String cst, String model) {
+    public GarCav(BigDecimal id, short codeCav, String nameCav, String cst, String model) {
         this.id = id;
         this.codeCav = codeCav;
         this.nameCav = nameCav;
@@ -138,10 +138,10 @@ public class CavGar implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CavGar)) {
+        if (!(object instanceof GarCav)) {
             return false;
         }
-        CavGar other = (CavGar) object;
+        GarCav other = (GarCav) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -150,7 +150,7 @@ public class CavGar implements Serializable {
 
     @Override
     public String toString() {
-        return "co.com.claro.cavGarantias.entity.CavGar[ id=" + id + " ]";
+        return "co.com.claro.cavGarantias.entity.GarCav[ id=" + id + " ]";
     }
     
 }
