@@ -5,6 +5,8 @@
  */
 package co.com.claro.cavGarantias.ws;
 
+import co.com.claro.cavGarantias.entity.CavGar;
+import co.com.claro.cavGarantias.facade.CavGarFacade;
 import co.com.claro.cavGarantias.model.DataResponse;
 import co.com.claro.cavGarantias.model.GenericResponse;
 import java.util.List;
@@ -25,25 +27,38 @@ import javax.ejb.TransactionManagement;
 @TransactionManagement
 public class cavGarantiasService {
 
-//    @EJB
-//    private CavGarFacade cavGarFacade;
+    @EJB
+    private CavGarFacade cavGarFacade;
+
     public cavGarantiasService() {
     }
 
     @GET
     @Consumes("application/json")
     @Produces("application/json")
-    @Path("queryCavsAll")
-    public DataResponse queryCavsAll(@QueryParam("codeCav") String codeCav) {
+    @Path("queryCav")
+    public DataResponse queryCav(@QueryParam("codeCav") String codeCav) {
         DataResponse responseEnd = new DataResponse();
         try {
-            GenericResponse response = new GenericResponse(true, "Consulta exitosa.");
-            // List<CavGar> list = cavGarFacade.queryCodeCav("2");
-//            responseEnd.setCavs(cavGarFacade.findAll());
-            responseEnd.setResponse(response);
+            if ("".equals(codeCav) || codeCav == null) {
+                GenericResponse response = new GenericResponse(false, "Por favor enviar el código del CAV (codeCav).");
+                responseEnd.setCavs(null);
+                responseEnd.setResponse(response);
+            } else {
+                List<CavGar> list = cavGarFacade.queryCodeCav(codeCav);
+                if (list != null) {
+                    GenericResponse response = new GenericResponse(true, "Consulta exitosa.");
+                    responseEnd.setCavs(list);
+                    responseEnd.setResponse(response);
+                } else {
+                    GenericResponse response = new GenericResponse(false, "No se encontraron registros con el código de CAV: " + codeCav);
+                    responseEnd.setCavs(null);
+                    responseEnd.setResponse(response);
+                }
+            }
         } catch (Exception e) {
-            GenericResponse response = new GenericResponse(false, "Ocurrió un error al consultar los CAVs. Detalle:" + e.getMessage());
-//            responseEnd.setCavs(null);
+            GenericResponse response = new GenericResponse(false, "Ocurrió un error al consultar los CAVs. Detalle: " + e.getMessage());
+            responseEnd.setCavs(null);
             responseEnd.setResponse(response);
         }
         return responseEnd;
