@@ -1,6 +1,6 @@
 package co.com.claro.cavGarantias.model;
 
-import co.com.claro.cavGarantias.entity.GarCav;
+import co.com.claro.cavGarantias.entity.WarCav;
 import java.util.List;
 import lombok.*;
 
@@ -15,6 +15,6 @@ public class DataResponse {
 
     @Getter
     @Setter
-    private List<GarCav> cavs;
+    private List<WarCav> cavs;
 
 }

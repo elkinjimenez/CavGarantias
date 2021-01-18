@@ -5,8 +5,8 @@
  */
 package co.com.claro.cavGarantias.ws;
 
-import co.com.claro.cavGarantias.entity.GarCav;
-import co.com.claro.cavGarantias.facade.GarCavFacade;
+import co.com.claro.cavGarantias.entity.WarCav;
+import co.com.claro.cavGarantias.facade.WarCavFacade;
 import co.com.claro.cavGarantias.model.DataResponse;
 import co.com.claro.cavGarantias.model.GenericResponse;
 import java.util.List;
@@ -28,7 +28,7 @@ import javax.ejb.TransactionManagement;
 public class cavGarantiasService {
 
     @EJB
-    private GarCavFacade garCavFacade;
+    private WarCavFacade warCavFacade;
 
     public cavGarantiasService() {
     }
@@ -46,7 +46,7 @@ public class cavGarantiasService {
                 responseEnd.setResponse(response);
             } else {
 //                List<GarCav> list = garCavFacade.findAll();
-                List<GarCav> list = garCavFacade.queryCodeCav(codeCav);
+                List<WarCav> list = warCavFacade.queryCodeCav(codeCav);
                 if (list != null) {
                     GenericResponse response = new GenericResponse(true, "Consulta exitosa.");
                     responseEnd.setCavs(list);
