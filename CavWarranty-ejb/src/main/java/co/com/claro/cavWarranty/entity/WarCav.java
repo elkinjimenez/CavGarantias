@@ -16,6 +16,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "WAR_CAV")
-@XmlRootElement
+@XmlRootElement (name = "WarCav")
 @NamedQueries({
     @NamedQuery(name = "WarCav.findAll", query = "SELECT w FROM WarCav w")
     , @NamedQuery(name = "WarCav.findById", query = "SELECT w FROM WarCav w WHERE w.id = :id")
@@ -41,28 +42,34 @@ public class WarCav implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ID")
+    @XmlElement(required = true)
     private BigDecimal id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "CODE_CAV")
+    @XmlElement(required = true)
     private short codeCav;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 150)
     @Column(name = "NAME_CAV")
+    @XmlElement(required = true)
     private String nameCav;
     @Size(max = 250)
     @Column(name = "ADDRESS")
+    @XmlElement(required = false)
     private String address;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "CST")
+    @XmlElement(required = true)
     private String cst;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "MODEL")
+    @XmlElement(required = true)
     private String model;
 
     public WarCav() {

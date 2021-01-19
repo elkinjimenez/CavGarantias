@@ -36,8 +36,8 @@ public class cavWarrantyService {
     @GET
     @Consumes("application/json")
     @Produces("application/json")
-    @Path("queryCav")
-    public DataResponse queryCav(@QueryParam("codeCav") String codeCav) {
+    @Path("queryByCodeCav")
+    public DataResponse queryByCodeCav(@QueryParam("codeCav") String codeCav) {
         DataResponse responseEnd = new DataResponse();
         try {
             if ("".equals(codeCav) || codeCav == null) {
